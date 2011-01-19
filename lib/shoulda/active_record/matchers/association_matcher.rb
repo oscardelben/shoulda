@@ -18,11 +18,14 @@ module Shoulda # :nodoc:
       # * <tt>through</tt> - association name for <tt>has_many :through</tt>
       # * <tt>dependent</tt> - tests that the association makes use of the
       #   dependent option.
+      # * <tt>order</tt> - tests that the association makes use of the order 
+      #   option.
       #
       # Example:
       #   it { should have_many(:friends) }
       #   it { should have_many(:enemies).through(:friends) }
       #   it { should have_many(:enemies).dependent(:destroy) }
+      #   it { should have_many(:enemies).order(:name) }
       #
       def have_many(name)
         AssociationMatcher.new(:has_many, name)
